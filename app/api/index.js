@@ -1,23 +1,21 @@
 function Api() {
 
-  this.get = ref => (
+  this.get = (v, ref) => (
     new Promise((resolve, reject) => {
-      fetch(ref)
-      .then((response) => { return response.json() } )
-      .catch((error) => console.warn("fetch error:", error))
-      .then((response) => {
-        console.log(response)
-      })
+      fetch(`http://localhost:7777/api/${v}/${ref}`)
+        .then((response) => {
+          resolve(response.json());
+        }, error => reject(error) );
     })
   );
 
-  this.getBars = () => {
+  this.getBarsAPI = () => (
     new Promise((resolve, reject) => {
-      this.get('https://css-tricks.com/wp-json/wp/v2/posts')
-      .then((items) => console.log(items))
-      .catch(reject)
+      this.get('v1','bars')
+        .then(items => resolve(items))
+        .catch(reject);
     })
-  }
+  );
 
 }
 
