@@ -6,7 +6,7 @@ import Wrapper from '../layouts/wrapper';
 export default function Scene({view, exact, ...rest}) {
   return (
     <Route
-      exact={exact}
+      exact={true}
       {...rest}
       component={({ history }) => (
         <RenderView
