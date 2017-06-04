@@ -17,6 +17,14 @@ function Api() {
     })
   );
 
+  this.searchAPI = (text) => (
+    new Promise((resolve, reject) => {
+      this.get('v1',`search?q=${text}`)
+        .then(items => resolve(items))
+        .catch(reject);
+    })
+  );
+
 }
 
 export default new Api();

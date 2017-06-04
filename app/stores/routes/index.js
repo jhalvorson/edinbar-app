@@ -1,18 +1,18 @@
 import { observable } from 'mobx';
 import MapView from '../../views/map';
-import Test from '../../views/test';
+import Search from '../../views/search';
 import Login from '../../views/login';
 
 class Routes {
   @observable all = [
     {
       path: '/',
-      view: MapView,
+      view: Search,
       authRequired: true,
     },
     {
       path: '/search',
-      view: Test,
+      view: Search,
       authRequired: true,
     },
     {
