@@ -5,14 +5,14 @@ class Navigation {
   @observable tabs = [
     {
       to: '/',
-      text: 'Home',
+      text: 'Map',
     },
     {
       to: '/search',
       text: 'Search',
     },
     {
-      to: '/favourite',
+      to: '/favourites',
       text: 'Fav',
     },
     {

@@ -2,12 +2,13 @@ import { observable } from 'mobx';
 import MapView from '../../views/map';
 import Search from '../../views/search';
 import Login from '../../views/login';
+import Bar from '../../views/single-bar';
 
 class Routes {
   @observable all = [
     {
       path: '/',
-      view: Search,
+      view: MapView,
       authRequired: true,
     },
     {
@@ -28,6 +29,10 @@ class Routes {
     {
       path: '/login',
       view: Login
+    },
+    {
+      path: '/bar/:id',
+      view: Bar
     }
   ];
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { inject, observer } from 'mobx-react';
+import { Link } from 'react-router-native';
 import axios from 'axios';
 import Wrapper from '../../layouts/wrapper';
 
@@ -31,7 +32,12 @@ export default class Search extends Component {
           <Text>Search!</Text>
         </TouchableOpacity>
         {search.searchResults.length > 0 &&
-          search.searchResults.map((result) => <Text>{result.name}</Text>)
+          search.searchResults.map((result) => (
+            <View key={result._id}>
+              <Text>{result.name}</Text>
+              <Link to={`/bar/${result.id}`}><Text>View bar</Text></Link>
+            </View>
+          ))
         }
       </Wrapper>
     );

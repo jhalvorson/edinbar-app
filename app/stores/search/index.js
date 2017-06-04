@@ -14,7 +14,7 @@ class Search {
 
   @action getResults() {
     axios
-      .get(`http://localhost:7777/api/v1/search?q=${this.currentSearch.text}`)
+      .get(`https://edinbar-dashboard.halvorson.co.uk/api/v1/search?q=${this.currentSearch.text}`)
       .then(res => {
         this.searchStatus = !this.searchStatus;
         this.searchResults.replace(res.data);
