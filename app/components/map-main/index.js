@@ -35,8 +35,6 @@ export default class MapMain extends Component {
             </MapView>
           }
         </View>
-        <Text>Bars:</Text>
-        {bars.map(bar => <Text key={bar._id}>{bar.name}</Text>)}
       </View>
     )
   }

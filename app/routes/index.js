@@ -12,7 +12,7 @@ export default class Routes extends Component {
     return (
       <NativeRouter history={nativeHistory}>
         <View>
-        {routes.all.map(route => <Scene key={route.path} {...route} />)}
+          {routes.all.map(route => <Scene key={route.path} {...route} />)}
         </View>
       </NativeRouter>
     );

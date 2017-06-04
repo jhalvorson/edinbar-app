@@ -4,7 +4,6 @@ export default StyleSheet.create({
   wrapper: {
   },
   content: {
-    marginBottom: 40,
   },
   footer: {
     zIndex: 1,

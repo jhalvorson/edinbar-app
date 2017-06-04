@@ -10,7 +10,6 @@ export default class MapView extends Component {
   render() {
     return (
       <Wrapper>
-        <Text>Hello</Text>
         <MapMain />
       </Wrapper>
     );

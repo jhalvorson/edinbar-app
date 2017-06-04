@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-native';
 import { inject, observer } from 'mobx-react';
 
-@inject('navigation')
+@inject('navigation', 'user')
 @observer
 export default class RenderView extends Component {
   componentWillMount() {
@@ -12,12 +12,22 @@ export default class RenderView extends Component {
 
   componentDidMount() {
     const { setActiveTab, history } = this.props.navigation;
-    const { pathName } = history.location;
+    const { pathname } = history.location;
+
+    setActiveTab(pathname);
   }
 
   render() {
-    const { view: ViewComponent } = this.props;
+    const { view: ViewComponent, user, authRequired } = this.props;
+
+    if( authRequired && !user.isLoggedIn) {
+      return <Redirect to={{pathname: '/login'}} />;
+    }
 
     return <ViewComponent />;
   }
 }
+
+RenderView.defaultProps = {
+  authRequired: false,
+};

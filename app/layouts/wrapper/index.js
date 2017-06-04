@@ -4,13 +4,13 @@ import FooterTabs from '../../components/footer-tabs';
 import styles from './styles';
 
 export default function Wrapper(props) {
-  const { children, withNavigation , title } = props;
+  const { children, disableScroll, withNavigation , title } = props;
   const { height } = Dimensions.get('window');
 
   return (
     <View style={styles.wrapper}>
-      <ScrollView overScrollMode="never" scrollEnabled={true}>
-        <View style={[styles.content, { minHeight: height - 80 }]}>
+      <ScrollView overScrollMode="never" scrollEnabled={!disableScroll}>
+        <View style={[styles.content, { height: height - 60 }]}>
           {children}
         </View>
       </ScrollView>
@@ -20,4 +20,8 @@ export default function Wrapper(props) {
       </View>
     </View>
   )
+}
+
+Wrapper.defaultProps = {
+  disableScroll: false,
 }
