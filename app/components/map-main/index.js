@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import { Link } from 'react-router-native';
 import { inject, observer } from 'mobx-react';
-import MapView from 'react-native-maps';
+import MapView, { Marker, Callout } from 'react-native-maps';
 import styles from './styles';
 
 @inject('bars', 'map')
@@ -26,17 +27,21 @@ export default class MapMain extends Component {
               region={region}
             >
               {bars.map(bar => (
-                <MapView.Marker
+                <Marker
                   key={`marker-${bar._id}`}
                   coordinate={{latitude: bar.location.coordinates.lat, longitude: bar.location.coordinates.lng}}
-                  title={bar.name}
-                />
+                >
+                <Callout>
+                  <Text>{bar.name}</Text>
+                  <Link to={`/bar/${bar._id}`}>
+                    <Text>Visit bar</Text>
+                  </Link>
+                </Callout>
+              </Marker>
               ))}
             </MapView>
           }
         </View>
-        <Text>Bars:</Text>
-        {bars.map(bar => <Text key={bar._id}>{bar.name}</Text>)}
       </View>
     )
   }
