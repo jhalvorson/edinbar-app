@@ -6,7 +6,7 @@ export default StyleSheet.create({
     paddingTop: 0,
   },
   container: {
-    height: height - 110,
+    height,
   },
   map: {
     ...StyleSheet.absoluteFillObject,

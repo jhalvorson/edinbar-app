@@ -10,11 +10,10 @@ export default function Wrapper(props) {
   return (
     <View style={styles.wrapper}>
       <ScrollView overScrollMode="never" scrollEnabled={!disableScroll}>
-        <View style={[styles.content, { height: height - 60 }]}>
+        <View style={[styles.content, { height }]}>
           {children}
         </View>
       </ScrollView>
-      <FooterTabs />
       <View style={styles.footer}>
         <FooterTabs />
       </View>

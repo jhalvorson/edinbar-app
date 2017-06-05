@@ -35,7 +35,7 @@ export default class Search extends Component {
           search.searchResults.map((result) => (
             <View key={result._id}>
               <Text>{result.name}</Text>
-              <Link to={`/bar/${result.id}`}><Text>View bar</Text></Link>
+              <Link to={`/bar/${result._id}`}><Text>View bar</Text></Link>
             </View>
           ))
         }

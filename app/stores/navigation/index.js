@@ -24,10 +24,17 @@ class Navigation {
   @observable history = {
     goBack: '',
     push: '',
+    location: {},
   };
+
+  @observable match = {};
 
   @action updateHistory = (history) => {
     this.history = history;
+  }
+
+  @action updateMatch = (match) => {
+    this.match = match;
   }
 
   @action setActiveTab = (activeTab) => {

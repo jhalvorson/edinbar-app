@@ -7,6 +7,5 @@ export default StyleSheet.create({
   },
   tab: {
     flex: 1,
-    height: 40,
   },
 });

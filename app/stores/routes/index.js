@@ -28,11 +28,12 @@ class Routes {
     },
     {
       path: '/login',
-      view: Login
+      view: Login,
     },
     {
       path: '/bar/:id',
-      view: Bar
+      view: Bar,
+      exact: false,
     }
   ];
 }

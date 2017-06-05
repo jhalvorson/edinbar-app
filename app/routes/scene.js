@@ -9,8 +9,9 @@ export default function Scene({view, authRequired, exact, ...rest}) {
     <Route
       exact={exact}
       {...rest}
-      component={({ history }) => (
+      component={({ history, match }) => (
         <RenderView
+          match={match}
           view={view}
           history={history}
           authRequired={authRequired}

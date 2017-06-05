@@ -6,8 +6,9 @@ import { inject, observer } from 'mobx-react';
 @observer
 export default class RenderView extends Component {
   componentWillMount() {
-    const { history, navigation } = this.props;
+    const { history, navigation, match } = this.props;
     navigation.updateHistory(history);
+    navigation.updateMatch(match);
   }
 
   componentDidMount() {
