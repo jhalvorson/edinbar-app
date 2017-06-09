@@ -7,6 +7,19 @@ class Map {
     latitudeDelta: 0.0922,
     longitudeDelta: 0.0421,
   }
+
+  @observable currentSlide = 0;
+  @observable currentBar = {}
+
+  @action slideToItem = (index, lat, lng) => {
+    this.currentSlide = index;
+    this.region = {
+      latitude: lat,
+      longitude: lng,
+      latitudeDelta: 0.0922,
+      longitudeDelta: 0.0421,
+    }
+  }
 }
 
 export default new Map();

@@ -2,7 +2,7 @@ function Api() {
 
   this.get = (v, ref) => (
     new Promise((resolve, reject) => {
-      fetch(`https://edinbar-backend-nspvkxgzrm.now.sh/api/${v}/${ref}`)
+      fetch(`https://edinbar-dashboard.halvorson.co.uk/api/${v}/${ref}`)
         .then((response) => {
           resolve(response.json());
         }, error => reject(error) );

@@ -1,16 +1,6 @@
-import { StyleSheet, Dimensions } from 'react-native';
-const { height } = Dimensions.get('window');
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  test: {
-    paddingTop: 0,
-  },
-  container: {
-    height,
-  },
-  map: {
-    ...StyleSheet.absoluteFillObject,
-  },
   carousel: {
     zIndex: 10,
     position: 'absolute',

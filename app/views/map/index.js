@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Dimensions } from 'react-native';
 import { inject, observer } from 'mobx-react';
 import Wrapper from '../../layouts/wrapper';
 import MapMain from '../../components/map-main';
+import BarCarousel from '../../components/bar-carousel';
 
 @inject('bars')
 @observer

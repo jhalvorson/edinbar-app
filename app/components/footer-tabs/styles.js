@@ -7,5 +7,6 @@ export default StyleSheet.create({
   },
   tab: {
     flex: 1,
+    padding: 15,
   },
 });
