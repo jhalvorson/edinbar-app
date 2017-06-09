@@ -43,8 +43,6 @@ export default class MapMain extends Component {
     const itemWidth = sliderWidth - 60;
     const itemHeight = height - 400;
 
-    console.log(this.map && this.map.props.children[currentSlide].props.coordinate);
-
     const settings = {
       sliderWidth,
       itemWidth,
